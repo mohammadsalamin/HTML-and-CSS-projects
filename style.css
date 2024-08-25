@@ -1,0 +1,313 @@
+
+.background1{
+    height: 600px;
+    border: 10px dotted red;
+    padding: 10px;
+    /*background-image: url(https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnphrgz8yfnjylrwfr0yl.png);
+    background-repeat: no-repeat; /*repeat : default value */
+    /*background-position: left; /* when zoom in its focus on the center only */
+    /*background-size:cover;
+    background-origin: padding-box;
+    background-attachment: fixed; /*scroll : default value , fixed : the background is fixed when scroll it */
+
+    background: red url(https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnphrgz8yfnjylrwfr0yl.png) no-repeat left/cover padding-box ;
+    
+    
+}
+.separateline{
+    height: 5px;
+    border: 5px;
+    background-image: linear-gradient(to right ,black,blue 70%,green);
+    
+    
+
+}
+.lineargradiant{
+    /*linear gradiant(التدرج في اللون) */
+    height:100px;
+    background-image: linear-gradient(to right,red,blue 80%,green,yellow);
+    /*background-image: linear-gradient(to left,red,blue 80%,green,yellow); 
+    background-image: linear-gradient(to top,red,blue 80%,green,yellow); 
+    background-image: linear-gradient(to bottom,red,blue 80%,green,yellow);
+    background-image: linear-gradient(to top left,red,blue 80%,green,yellow);  */
+    /*background-image: linear-gradient(to right,red,blue 80%,green 80% 90%,yellow); blue end at 80% and green start at 80% and end at 90%*/
+    background-image: linear-gradient(to bottom, #228c61 ,transparent); /*from top to bottom , transparent(الشفافية)*/
+}
+.radialgradiant{
+    height: 600px;
+    /*background-image: radial-gradient(red,yellow); /* the radial gradiant is a ellipse(بيضاوي) shape*/
+    /*background-image: radial-gradient(circle,red,yellow); /* the radial gradiant is a circle shape*/
+    background-image: radial-gradient(circle 400px at center,red,yellow); /*the dimensions in ellipse are not equal (not affect in px)*/
+}
+.overflow{
+    height: 200px;
+    width: 200px;
+    background-color: #228c61;
+    /*overflow: hidden; to hidden the words that extenal of the border*/
+    overflow: scroll;
+ 
+}
+.liststyle{
+    list-style-type: circle;
+    list-style-position: inside;
+    list-style-image: url();
+    background-color: gold;
+    /*list-style:circle inside url();*/
+}
+table{
+    width: 100%;
+    border-spacing: 1px;
+}
+th{
+    background-color: cornflowerblue;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle; /*default value */
+}
+td{
+    background-color: darkgoldenrod;
+    height: 35px;
+    text-align: center;
+    vertical-align: middle; /*default value */
+    border: 2px solid black;
+}
+.PseudoClasses{
+    height: 100px;
+    width: 200px;
+    background-color: black;
+    background-size: contain; /*appears a complete photo*/
+}
+.PseudoClasses:hover{ /*hover : when a mouse click on , do it*/
+    background-color: aquamarine;
+    background-image: url(background_image.avif);
+}
+.PseudoLinks{
+    text-align: left;
+    color: blue;    
+}
+.PseudoLinks:hover{
+    color: red;
+}
+.PseudoLinks:visited{
+    color: yellow;
+}
+#email:invalid{
+    background: #ff00003c;
+}
+#email:valid{   /* : --> to reach to classes */
+    background: #00800036;
+}
+.Pseudo-elements::first-line{ /* :: --> to reach to the elements */
+    color: red;
+    background: black;
+    font-size: 20px; 
+}
+.Pseudo-elements::selection{
+    background: red;
+    color:white
+}
+h3 + p{ /* + : sibling selector ( pالشقيق المجاور ل) */
+    color: red; 
+}
+/*h3 ~ p{ ~ : جميع الاشقاء المجاورين
+    color: red;
+} */
+ 
+/*
+1. [attr]
+2. element[attr]
+3. [attr="value"]
+4. element [attr="value"]
+*/
+ [type="submit"]{
+    background: blue;
+    cursor: pointer;
+ }
+ #usname:invalid{
+    background: #ff00003c;
+ }
+ #usname:valid{
+    background: #00800036;
+ }
+ /*
+ transform : to change the status
+ transform:translate(x,y)
+ transform:move(x,y)
+ scale : zoom in and zoom out
+ matrix(scaleX,skewY,skewX,scaleY,tranlateX,translateY)
+ */
+ .transform{
+    height: 80px;
+    width: 80px;
+    background-color: yellow;
+    transform: translate(50px,-10px);
+    transform: scale(1); /*default */
+    transform: rotate(30deg);
+    transform: skew(10deg,20deg);
+    /*transform: matrix(1,0,0,1,0,0); default valuw */
+    /*translate: 0 0; without transform  x y */ 
+ }
+ .transition{
+    height: 30px;
+    width: 80px;
+    background-color: black;
+    color: red;
+    /*transition-property: all;
+    transition-duration: 4s;
+    transition-timing-function: ease;
+    transition-delay: 2s;*/
+    transition:all 4s ease 2s; /*time for the motion */
+ }
+ .transition:hover{
+    width: 100%;
+    background-color: orange;
+    color: black;
+ }
+ .animation{
+    height: 80px;
+    width: 80px;
+    background: chartreuse;
+    animation-name: square;
+    animation-duration: 4s;
+    animation-timing-function: linear; /* the speed is static */
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-direction: normal; /*default */
+    animation-fill-mode: both; /*both forward and backword */
+    /*animation: square 4s linear 2s infinite normal both running ; */
+ }
+ @keyframes square{ /* keyframes : to move a elements from frame to another frame */
+    /*from{ 0 -- 100%
+        background:chartreuse ;
+        width: 0px;
+    }
+    to{
+        background: blue;
+        width: 100%;
+    }*/
+    /*0%{
+        background:chartreuse ;
+        width: 0px;
+    }
+    50%{
+        background: black;
+    }
+    100%{
+        background: blue;
+        width: 100%;
+    }*/
+
+    0%{
+        translate: 0 0; /* x=0 , y= 0 */
+        background: red;
+        rotate: 0;
+    }
+
+    25%{
+        translate: 0 500px; /* 500 by y-axis */
+        background: yellow;
+        rotate: 90deg;
+    }
+
+    50%{
+        translate: 400px 500px;
+        background: green;
+        rotate: 180deg;
+    }
+
+    75%{
+        translate: 400px 0;
+        background: black;
+        rotate: 270deg;
+    }
+
+    100%{
+        translate: 0 0;
+        background: #228c61;
+        rotate: 360deg;
+    }
+
+ }
+ .animation:hover{
+    animation-play-state: paused;
+    cursor: pointer ; /* controls for the shape of the mouse */
+ }
+ p{ /*block : take a 100% from parent width ,, span : fit content*/
+    background:red;
+    display: inline; /* to convert from block element to inline element */
+    /*display: inline-block; to active the height and width 
+    height: 100px;
+    width: 100px;
+    margin: 100px;*/
+ }
+ span{
+    background: blue;
+    display: block; /*to convert from inline element to block element */
+
+ }
+ /*
+ hide (visibility: hidden);
+ delete (display: none;)
+ transperancy (الشفافية) opacity: 1;
+ */
+ .first{
+    background: red;
+    visibility: visible; /*the default value is visible (ظاهر)*/
+    opacity: 0.7;
+ }
+ .second{
+    background: blue;
+    display: none;
+;
+ }
+ .parent{
+    background: gold;
+    height: 500px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    /*flex-direction: row-reverse;*/
+    justify-content: space-evenly;
+    /*align-items: flex-start;*/
+    align-content: flex-start; /*turn on only with wrap in flex-flow */
+    
+ }
+ .parent div{
+    padding: 10px;
+    margin: 10px;
+ }
+ .item1{
+    background: blue;
+    align-self: stretch ; /*add for the children only */
+ }
+ .item2{
+    background: white;
+ }
+ .item3{
+    background: green;
+ }
+ .item4{
+    background: aqua;
+ }
+ .parent1{
+    background-color:black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,100px);
+    gap: 10px; /* 10px fpr row , 10px for coloum */
+    text-align: center;
+    
+ }
+ .parent1 div{
+    /*background-color: aqua;*/
+    align-content: center;
+    
+ }
+ .header, .footer{
+    grid-column: 1/-1; /* start from first line to last line */
+    background-color: aqua;
+ }
+.nav, .main, .sidebar{
+    grid-row: 2/4; /*start from line 2 to line 4 */
+    background-color: bisque;
+}
